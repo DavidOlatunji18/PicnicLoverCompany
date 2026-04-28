@@ -62,22 +62,18 @@ export default function Footer() {
             style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '0.95rem' }}
             className="flex items-center gap-2 hover:text-primary transition-colors">
             <MdEmail size={16} />
-            hello@picnicloverco.com
+            picnicloverco@gmail.com
           </a>
 
           {/* Social Icons */}
           <div className="flex items-center gap-4 mt-2">
-            <a href="https://instagram.com/picnicloverco" target="_blank" rel="noopener noreferrer"
+            <a href="https://instagram.com/picnicloverco_" target="_blank" rel="noopener noreferrer"
               style={{ color: '#E8547A' }} className="hover:opacity-70 transition-opacity">
               <FaInstagram size={22} />
             </a>
             <a href="https://tiktok.com/@picnicloverco" target="_blank" rel="noopener noreferrer"
               style={{ color: '#E8547A' }} className="hover:opacity-70 transition-opacity">
               <FaTiktok size={20} />
-            </a>
-            <a href="https://facebook.com/picnicloverco" target="_blank" rel="noopener noreferrer"
-              style={{ color: '#E8547A' }} className="hover:opacity-70 transition-opacity">
-              <FaFacebookF size={20} />
             </a>
           </div>
         </div>
