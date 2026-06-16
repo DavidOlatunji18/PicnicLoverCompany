@@ -5,7 +5,7 @@ import { MdEmail } from 'react-icons/md'
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#FAF7F4', borderTop: '1px solid #F2A0B4' }} className="w-full px-8 py-12">
+    <footer style={{ backgroundColor: '#FAF7F4', borderTop: '0.5px solid #F2A0B4' }} className="w-full px-8 py-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* Logo & Tagline */}
@@ -31,7 +31,7 @@ export default function Footer() {
             { label: 'Home', href: '/' },
             { label: 'About', href: '/about' },
             { label: 'Gallery', href: '/gallery' },
-            { label: 'Pricing', href: '/pricing' },
+            { label: 'Packages', href: '/packages' },
             { label: 'FAQ', href: '/faq' },
             { label: 'Book Now', href: '/book' },
           ].map(({ label, href }) => (
@@ -80,7 +80,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div style={{ borderTop: '1px solid #F2A0B4', marginTop: '2.5rem', paddingTop: '1.5rem' }}
+      <div style={{ borderTop: '0.5px solid #F2A0B4', marginTop: '2.5rem', paddingTop: '1.5rem' }}
         className="text-center">
         <p style={{ fontFamily: 'var(--font-cormorant)', color: '#B5637A', fontSize: '0.85rem' }}>
           © {new Date().getFullYear()} Picnic Lover Company. All rights reserved.

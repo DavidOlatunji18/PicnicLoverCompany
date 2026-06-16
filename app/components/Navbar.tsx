@@ -60,33 +60,33 @@ export default function Navbar() {
             <div className="relative"
               onMouseEnter={() => setPricingOpen(true)}
               onMouseLeave={() => setPricingOpen(false)}>
-              <button style={{ ...navLinkStyle, cursor: 'pointer' }}
-                className={`flex items-center gap-1 hover:text-primary transition-colors pb-0.5 ${isActive('/pricing') ? 'text-primary border-b-2 border-primary' : 'text-text-dark'}`}>
-                PRICING
+              <Link href="/packages" style={{ ...navLinkStyle, cursor: 'pointer' }}
+                className={`flex items-center gap-1 hover:text-primary transition-colors pb-0.5 ${isActive('/packages') ? 'text-primary border-b-2 border-primary' : 'text-text-dark'}`}>
+                PACKAGES
                 <span style={{ fontSize: '0.6rem' }}>▼</span>
-              </button>
+              </Link>
 
               {pricingOpen && (
                 <div className="absolute top-full left-0 z-50 pt-4">
                   <div style={{ backgroundColor: '#FAF7F4', border: '1px solid #F2A0B4', minWidth: '220px' }}
                     className="rounded-lg shadow-sm">
-                    <Link href="/pricing" style={dropdownLinkStyle}
+                    <Link href="/packages#pricing" style={dropdownLinkStyle}
                       className="block px-4 py-3 text-text-dark hover:text-primary transition-colors">
-                      PACKAGES & PRICING
+                      PRICING
                     </Link>
-                    <Link href="/pricing#addons" style={dropdownLinkStyle}
+                    <Link href="/packages#addons" style={dropdownLinkStyle}
                       className="block px-4 py-3 text-text-dark hover:text-primary transition-colors border-t border-primary-soft">
                       ADD-ONS
                     </Link>
-                    <Link href="/pricing#deposit" style={dropdownLinkStyle}
+                    <Link href="/packages#deposit" style={dropdownLinkStyle}
                       className="block px-4 py-3 text-text-dark hover:text-primary transition-colors border-t border-primary-soft">
                       DEPOSIT POLICY
                     </Link>
-                    <Link href="/pricing#locations" style={dropdownLinkStyle}
+                    <Link href="/packages#locations" style={dropdownLinkStyle}
                       className="block px-4 py-3 text-text-dark hover:text-primary transition-colors border-t border-primary-soft">
                       PREFERRED LOCATIONS
                     </Link>
-                    <Link href="/pricing#themes" style={dropdownLinkStyle}
+                    <Link href="/packages#themes" style={dropdownLinkStyle}
                       className="block px-4 py-3 text-text-dark hover:text-primary transition-colors border-t border-primary-soft">
                       THEMES
                     </Link>
@@ -151,29 +151,35 @@ export default function Navbar() {
 
             {/* Mobile Pricing Accordion */}
             <div>
-              <button
-                style={mobileLinkStyle}
-                className={`flex items-center gap-2 transition-colors w-full ${isActive('/pricing') ? 'text-primary' : 'text-text-dark hover:text-primary'}`}
-                onClick={() => setMobilePricingOpen(!mobilePricingOpen)}>
-                PRICING
-                <span style={{ fontSize: '0.65rem' }}>{mobilePricingOpen ? '▲' : '▼'}</span>
-              </button>
+              <div className="flex items-center gap-3">
+                <Link href="/packages" style={mobileLinkStyle}
+                  className={`transition-colors ${isActive('/packages') ? 'text-primary' : 'text-text-dark hover:text-primary'}`}
+                  onClick={() => setIsOpen(false)}>
+                  PACKAGES
+                </Link>
+                <button
+                  type="button"
+                  style={{ fontSize: '0.65rem', color: isActive('/packages') ? '#E8547A' : '#2D1B1E' }}
+                  onClick={() => setMobilePricingOpen(!mobilePricingOpen)}>
+                  {mobilePricingOpen ? '▲' : '▼'}
+                </button>
+              </div>
 
               {mobilePricingOpen && (
                 <div style={{ borderLeft: '2px solid #F2A0B4' }} className="mt-3 ml-2 pl-4 flex flex-col gap-3">
-                  <Link href="/pricing" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
-                    PACKAGES & PRICING
+                  <Link href="/packages#pricing" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+                    PRICING
                   </Link>
-                  <Link href="/pricing#addons" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+                  <Link href="/packages#addons" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
                     ADD-ONS
                   </Link>
-                  <Link href="/pricing#deposit" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+                  <Link href="/packages#deposit" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
                     DEPOSIT POLICY
                   </Link>
-                  <Link href="/pricing#locations" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+                  <Link href="/packages#locations" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
                     PREFERRED LOCATIONS
                   </Link>
-                  <Link href="/pricing#themes" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+                  <Link href="/packages#themes" style={dropdownLinkStyle} className="text-text-dark hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
                     THEMES
                   </Link>
                 </div>
