@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { MdLocationOn } from 'react-icons/md'
+import FadeIn from '../components/FadeIn'
 
 export default function Packages() {
   const pricing = [
@@ -77,81 +78,90 @@ export default function Packages() {
       <div className="max-w-5xl mx-auto px-6">
 
         {/* Page Header */}
-        <h1 style={{
-          color: '#E8547A',
-          fontFamily: 'var(--font-playfair)',
-          fontSize: 'clamp(2rem, 5vw, 3rem)',
-          marginBottom: '0.5rem',
-        }} className="text-center">
-          Packages
-        </h1>
-        <p style={{
-          color: '#B5637A',
-          fontFamily: 'var(--font-cormorant)',
-          fontSize: '1.1rem',
-          marginBottom: '3.5rem',
-        }} className="text-center">
-          Everything you need to make your experience unforgettable.
-        </p>
+        <FadeIn>
+          <h1 style={{
+            color: '#E8547A',
+            fontFamily: 'var(--font-playfair)',
+            fontSize: 'clamp(2rem, 5vw, 3rem)',
+            marginBottom: '0.5rem',
+          }} className="text-center">
+            Packages
+          </h1>
+          <p style={{
+            color: '#B5637A',
+            fontFamily: 'var(--font-cormorant)',
+            fontSize: '1.1rem',
+            marginBottom: '3.5rem',
+          }} className="text-center">
+            Everything you need to make your experience unforgettable.
+          </p>
+        </FadeIn>
 
         {/* What's Included */}
         <section style={{ marginBottom: '4rem' }}>
-          <h2 style={sectionHeadingStyle} className="text-center">What's Included</h2>
-          <div style={dividerStyle} />
-          <ul style={{ listStyle: 'none', padding: 0, maxWidth: '680px', margin: '0 auto' }}
-            className="flex flex-col gap-3">
-            {included.map((item, i) => (
-              <li key={i} className="flex items-start gap-3"
-                style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '1.05rem' }}>
-                <span style={{ color: '#E8547A', marginTop: '2px', flexShrink: 0 }}>✦</span>
-                {item}
-              </li>
-            ))}
-          </ul>
+          <FadeIn>
+            <h2 style={sectionHeadingStyle} className="text-center">What's Included</h2>
+            <div style={dividerStyle} />
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <ul style={{ listStyle: 'none', padding: 0, maxWidth: '680px', margin: '0 auto' }}
+              className="flex flex-col gap-3">
+              {included.map((item, i) => (
+                <li key={i} className="flex items-start gap-3"
+                  style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '1.05rem' }}>
+                  <span style={{ color: '#E8547A', marginTop: '2px', flexShrink: 0 }}>✦</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
         </section>
 
         <div style={{ borderTop: '0.5px solid #F2A0B4', marginBottom: '4rem' }} />
 
         {/* Pricing */}
         <section id="pricing" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <h2 style={sectionHeadingStyle} className="text-center">Pricing</h2>
-          <div style={dividerStyle} />
-          <p style={{
-            fontFamily: 'var(--font-cormorant)',
-            color: '#B5637A',
-            fontSize: '1rem',
-            marginBottom: '2rem',
-            textAlign: 'center',
-          }}>
-            All packages include the full setup listed above.
-          </p>
+          <FadeIn>
+            <h2 style={sectionHeadingStyle} className="text-center">Pricing</h2>
+            <div style={dividerStyle} />
+            <p style={{
+              fontFamily: 'var(--font-cormorant)',
+              color: '#B5637A',
+              fontSize: '1rem',
+              marginBottom: '2rem',
+              textAlign: 'center',
+            }}>
+              All packages include the full setup listed above.
+            </p>
+          </FadeIn>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {pricing.map(({ guests, price }, i) => (
-              <div key={i}
-                style={{
+              <FadeIn key={i} delay={i * 0.05}>
+                <div style={{
                   border: '1px solid #F2A0B4',
                   borderRadius: '12px',
                   backgroundColor: '#fff',
                   padding: '1.25rem 1rem',
                   textAlign: 'center',
                 }}>
-                <p style={{
-                  fontFamily: 'var(--font-cormorant)',
-                  color: '#B5637A',
-                  fontSize: '0.9rem',
-                  marginBottom: '0.4rem',
-                }}>
-                  {guests}
-                </p>
-                <p style={{
-                  fontFamily: 'var(--font-playfair)',
-                  color: '#E8547A',
-                  fontSize: i === pricing.length - 1 ? '0.9rem' : '1.4rem',
-                  fontWeight: '600',
-                }}>
-                  {price}
-                </p>
-              </div>
+                  <p style={{
+                    fontFamily: 'var(--font-cormorant)',
+                    color: '#B5637A',
+                    fontSize: '0.9rem',
+                    marginBottom: '0.4rem',
+                  }}>
+                    {guests}
+                  </p>
+                  <p style={{
+                    fontFamily: 'var(--font-playfair)',
+                    color: '#E8547A',
+                    fontSize: i === pricing.length - 1 ? '0.9rem' : '1.4rem',
+                    fontWeight: '600',
+                  }}>
+                    {price}
+                  </p>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </section>
@@ -160,43 +170,46 @@ export default function Packages() {
 
         {/* Add-ons */}
         <section id="addons" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <h2 style={sectionHeadingStyle} className="text-center">Add-Ons</h2>
-          <div style={dividerStyle} />
+          <FadeIn>
+            <h2 style={sectionHeadingStyle} className="text-center">Add-Ons</h2>
+            <div style={dividerStyle} />
+          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {addons.map(({ name, detail, image }, i) => (
-              <div key={i}
-                style={{
+              <FadeIn key={i} delay={i * 0.1}>
+                <div style={{
                   border: '1px solid #F2A0B4',
                   borderRadius: '12px',
                   backgroundColor: '#fff',
                   overflow: 'hidden',
                 }}>
-                <div className="relative w-full" style={{ height: '200px' }}>
-                  <Image
-                    src={image}
-                    alt={name}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
+                  <div className="relative w-full" style={{ height: '200px' }}>
+                    <Image
+                      src={image}
+                      alt={name}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div style={{ padding: '1rem 1.25rem' }}>
+                    <p style={{
+                      fontFamily: 'var(--font-playfair)',
+                      color: '#E8547A',
+                      fontSize: '1rem',
+                      marginBottom: '0.2rem',
+                    }}>
+                      {name}
+                    </p>
+                    <p style={{
+                      fontFamily: 'var(--font-cormorant)',
+                      color: '#B5637A',
+                      fontSize: '1rem',
+                    }}>
+                      {detail}
+                    </p>
+                  </div>
                 </div>
-                <div style={{ padding: '1rem 1.25rem' }}>
-                  <p style={{
-                    fontFamily: 'var(--font-playfair)',
-                    color: '#E8547A',
-                    fontSize: '1rem',
-                    marginBottom: '0.2rem',
-                  }}>
-                    {name}
-                  </p>
-                  <p style={{
-                    fontFamily: 'var(--font-cormorant)',
-                    color: '#B5637A',
-                    fontSize: '1rem',
-                  }}>
-                    {detail}
-                  </p>
-                </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </section>
@@ -205,51 +218,57 @@ export default function Packages() {
 
         {/* Deposit Policy */}
         <section id="deposit" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <h2 style={sectionHeadingStyle} className="text-center">Deposit Policy</h2>
-          <div style={dividerStyle} />
-          <div style={{
-            maxWidth: '640px',
-            margin: '0 auto',
-            border: '1px solid #F2A0B4',
-            borderRadius: '12px',
-            backgroundColor: '#fff',
-            padding: '2rem',
-          }}
-            className="flex flex-col gap-3">
-            {[
-              'A non-refundable deposit of 50% is required to secure your booking date.',
-              'The remaining balance is due 48 hours before your picnic date.',
-              'Cancellations made within 48 hours of the event are non-refundable.',
-              'Rescheduling is allowed up to 72 hours before your event at no additional charge.',
-            ].map((line, i) => (
-              <p key={i} className="flex items-start gap-3"
-                style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '1.05rem' }}>
-                <span style={{ color: '#E8547A', flexShrink: 0 }}>✦</span>
-                {line}
-              </p>
-            ))}
-          </div>
+          <FadeIn>
+            <h2 style={sectionHeadingStyle} className="text-center">Deposit Policy</h2>
+            <div style={dividerStyle} />
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <div style={{
+              maxWidth: '640px',
+              margin: '0 auto',
+              border: '1px solid #F2A0B4',
+              borderRadius: '12px',
+              backgroundColor: '#fff',
+              padding: '2rem',
+            }}
+              className="flex flex-col gap-3">
+              {[
+                'A non-refundable deposit of 50% is required to secure your booking date.',
+                'The remaining balance is due 48 hours before your picnic date.',
+                'Cancellations made within 48 hours of the event are non-refundable.',
+                'Rescheduling is allowed up to 72 hours before your event at no additional charge.',
+              ].map((line, i) => (
+                <p key={i} className="flex items-start gap-3"
+                  style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '1.05rem' }}>
+                  <span style={{ color: '#E8547A', flexShrink: 0 }}>✦</span>
+                  {line}
+                </p>
+              ))}
+            </div>
+          </FadeIn>
         </section>
 
         <div style={{ borderTop: '0.5px solid #F2A0B4', marginBottom: '4rem' }} />
 
         {/* Preferred Locations */}
         <section id="locations" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <h2 style={sectionHeadingStyle} className="text-center">Preferred Locations</h2>
-          <div style={dividerStyle} />
-          <p style={{
-            fontFamily: 'var(--font-cormorant)',
-            color: '#B5637A',
-            fontSize: '1rem',
-            marginBottom: '2rem',
-            textAlign: 'center',
-          }}>
-            We set up at beautiful outdoor spaces across the DMV area.
-          </p>
+          <FadeIn>
+            <h2 style={sectionHeadingStyle} className="text-center">Preferred Locations</h2>
+            <div style={dividerStyle} />
+            <p style={{
+              fontFamily: 'var(--font-cormorant)',
+              color: '#B5637A',
+              fontSize: '1rem',
+              marginBottom: '2rem',
+              textAlign: 'center',
+            }}>
+              We set up at beautiful outdoor spaces across the DMV area.
+            </p>
+          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {locations.map(({ name, area, map }, i) => (
-              <div key={i}
-                style={{
+              <FadeIn key={i} delay={i * 0.08}>
+                <div style={{
                   border: '1px solid #F2A0B4',
                   borderRadius: '12px',
                   backgroundColor: '#fff',
@@ -259,29 +278,30 @@ export default function Packages() {
                   alignItems: 'center',
                   gap: '0.75rem',
                 }}>
-                <div>
-                  <p style={{
-                    fontFamily: 'var(--font-playfair)',
-                    color: '#E8547A',
-                    fontSize: '1rem',
-                    marginBottom: '0.25rem',
-                  }}>
-                    {name}
-                  </p>
-                  <p style={{
-                    fontFamily: 'var(--font-cormorant)',
-                    color: '#B5637A',
-                    fontSize: '0.95rem',
-                  }}>
-                    {area}
-                  </p>
+                  <div>
+                    <p style={{
+                      fontFamily: 'var(--font-playfair)',
+                      color: '#E8547A',
+                      fontSize: '1rem',
+                      marginBottom: '0.25rem',
+                    }}>
+                      {name}
+                    </p>
+                    <p style={{
+                      fontFamily: 'var(--font-cormorant)',
+                      color: '#B5637A',
+                      fontSize: '0.95rem',
+                    }}>
+                      {area}
+                    </p>
+                  </div>
+                  <a href={map} target="_blank" rel="noopener noreferrer"
+                    style={{ color: '#E8547A', flexShrink: 0 }}
+                    className="hover:opacity-70 transition-opacity">
+                    <MdLocationOn size={28} />
+                  </a>
                 </div>
-                <a href={map} target="_blank" rel="noopener noreferrer"
-                  style={{ color: '#E8547A', flexShrink: 0 }}
-                  className="hover:opacity-70 transition-opacity">
-                  <MdLocationOn size={28} />
-                </a>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </section>
@@ -290,58 +310,63 @@ export default function Packages() {
 
         {/* Themes */}
         <section id="themes" style={{ scrollMarginTop: '120px' }}>
-          <h2 style={sectionHeadingStyle} className="text-center">Themes</h2>
-          <div style={dividerStyle} />
+          <FadeIn>
+            <h2 style={sectionHeadingStyle} className="text-center">Themes</h2>
+            <div style={dividerStyle} />
+          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {themes.map(({ name, tagline }, i) => (
-              <div key={i}
-                style={{
+              <FadeIn key={i} delay={i * 0.08}>
+                <div style={{
                   border: '1px solid #F2A0B4',
                   borderRadius: '12px',
                   backgroundColor: '#fff',
                   padding: '1.25rem 1.5rem',
                 }}>
-                <p style={{
-                  fontFamily: 'var(--font-playfair)',
-                  color: '#E8547A',
-                  fontSize: '1rem',
-                  fontWeight: '600',
-                  marginBottom: '0.25rem',
-                  letterSpacing: '0.05em',
-                }}>
-                  {name}
-                </p>
-                <p style={{
-                  fontFamily: 'var(--font-cormorant)',
-                  color: '#B5637A',
-                  fontSize: '0.95rem',
-                  fontStyle: 'italic',
-                }}>
-                  {tagline}
-                </p>
-              </div>
+                  <p style={{
+                    fontFamily: 'var(--font-playfair)',
+                    color: '#E8547A',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    marginBottom: '0.25rem',
+                    letterSpacing: '0.05em',
+                  }}>
+                    {name}
+                  </p>
+                  <p style={{
+                    fontFamily: 'var(--font-cormorant)',
+                    color: '#B5637A',
+                    fontSize: '0.95rem',
+                    fontStyle: 'italic',
+                  }}>
+                    {tagline}
+                  </p>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </section>
 
         {/* CTA */}
-        <div className="text-center" style={{ marginTop: '4rem' }}>
-          <a href="/book"
-            style={{
-              backgroundColor: '#E8547A',
-              color: 'white',
-              fontFamily: 'var(--font-cormorant)',
-              fontWeight: '700',
-              fontSize: '1rem',
-              letterSpacing: '0.08em',
-              display: 'inline-block',
-              padding: '0.75rem 2.5rem',
-              borderRadius: '9999px',
-            }}
-            className="hover:opacity-90 transition-opacity">
-            BOOK NOW
-          </a>
-        </div>
+        <FadeIn delay={0.1}>
+          <div className="text-center" style={{ marginTop: '4rem' }}>
+            <a href="/book"
+              style={{
+                backgroundColor: '#E8547A',
+                color: 'white',
+                fontFamily: 'var(--font-cormorant)',
+                fontWeight: '700',
+                fontSize: '1rem',
+                letterSpacing: '0.08em',
+                display: 'inline-block',
+                padding: '0.75rem 2.5rem',
+                borderRadius: '9999px',
+              }}
+              className="hover:opacity-90 transition-opacity">
+              BOOK NOW
+            </a>
+          </div>
+        </FadeIn>
 
       </div>
     </main>

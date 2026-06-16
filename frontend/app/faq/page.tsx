@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import FadeIn from '../components/FadeIn'
 
 const faqs = [
   {
@@ -56,28 +57,30 @@ export default function FAQ() {
     <main style={{ backgroundColor: '#FAF7F4', minHeight: '100vh', paddingTop: '4rem', paddingBottom: '4rem' }}>
       <div className="max-w-3xl mx-auto px-6">
 
-        <h1 style={{
-          color: '#E8547A',
-          fontFamily: 'var(--font-playfair)',
-          fontSize: '3rem',
-          marginBottom: '0.5rem',
-        }} className="text-center">
-          FAQs
-        </h1>
+        <FadeIn>
+          <h1 style={{
+            color: '#E8547A',
+            fontFamily: 'var(--font-playfair)',
+            fontSize: '3rem',
+            marginBottom: '0.5rem',
+          }} className="text-center">
+            FAQs
+          </h1>
 
-        <p style={{
-          color: '#B5637A',
-          fontFamily: 'var(--font-cormorant)',
-          fontSize: '1.1rem',
-          marginBottom: '3rem',
-        }} className="text-center">
-          Everything you need to know before booking your experience.
-        </p>
+          <p style={{
+            color: '#B5637A',
+            fontFamily: 'var(--font-cormorant)',
+            fontSize: '1.1rem',
+            marginBottom: '3rem',
+          }} className="text-center">
+            Everything you need to know before booking your experience.
+          </p>
+        </FadeIn>
 
         <div className="flex flex-col gap-4">
           {faqs.map((faq, index) => (
+            <FadeIn key={index} delay={index * 0.05}>
             <div
-              key={index}
               style={{ border: '1px solid #F2A0B4', borderRadius: '12px', overflow: 'hidden' }}>
 
               <button
@@ -111,6 +114,7 @@ export default function FAQ() {
                 </div>
               )}
             </div>
+            </FadeIn>
           ))}
         </div>
 
