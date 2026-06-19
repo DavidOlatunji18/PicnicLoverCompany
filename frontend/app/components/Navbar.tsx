@@ -11,6 +11,8 @@ export default function Navbar() {
   const [mobilePricingOpen, setMobilePricingOpen] = useState(false)
   const pathname = usePathname()
 
+  if (pathname.startsWith('/dashboard')) return null
+
   const isActive = (href: string) => pathname === href || (href !== '/' && pathname.startsWith(href))
 
   const navLinkStyle = {

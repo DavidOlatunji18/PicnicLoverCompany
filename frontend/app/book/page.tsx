@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { MdSchedule } from 'react-icons/md'
+import FadeIn from '../components/FadeIn'
 
 function CustomSelect({
   options,
@@ -260,14 +261,16 @@ export default function Book() {
       <div className="max-w-xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <h1 style={{ fontFamily: 'var(--font-playfair)', color: '#E8547A', fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '0.5rem' }}
-          className="text-center">
-          Book Your Picnic
-        </h1>
-        <p style={{ fontFamily: 'var(--font-cormorant)', color: '#B5637A', fontSize: '1.1rem', marginBottom: '2.5rem' }}
-          className="text-center">
-          Fill out the form below and we'll be in touch to confirm your experience.
-        </p>
+        <FadeIn onMount direction="left" delay={0.3}>
+          <h1 style={{ fontFamily: 'var(--font-playfair)', color: '#E8547A', fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '0.5rem' }}
+            className="text-center">
+            Book Your Picnic
+          </h1>
+          <p style={{ fontFamily: 'var(--font-cormorant)', color: '#B5637A', fontSize: '1.1rem', marginBottom: '2.5rem' }}
+            className="text-center">
+            Fill out the form below and we'll be in touch to confirm your experience.
+          </p>
+        </FadeIn>
 
         {/* Step Indicator */}
         <div className="flex items-center justify-center gap-1 sm:gap-2 mb-10">

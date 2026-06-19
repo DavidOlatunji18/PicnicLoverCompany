@@ -3,20 +3,53 @@
 import { motion } from 'framer-motion'
 import { ReactNode, CSSProperties } from 'react'
 
+type Direction = 'up' | 'up-far' | 'left' | 'right' | 'fade'
+
 interface FadeInProps {
   children: ReactNode
   delay?: number
   className?: string
   style?: CSSProperties
   onMount?: boolean
+  direction?: Direction
 }
 
-export default function FadeIn({ children, delay = 0, className, style, onMount = false }: FadeInProps) {
+function getInitial(direction: Direction) {
+  switch (direction) {
+    case 'up':      return { opacity: 0, y: 24 }
+    case 'up-far':  return { opacity: 0, y: 60 }
+    case 'left':    return { opacity: 0, x: -40 }
+    case 'right':   return { opacity: 0, x: 40 }
+    case 'fade':    return { opacity: 0 }
+  }
+}
+
+function getAnimate(direction: Direction) {
+  switch (direction) {
+    case 'up':
+    case 'up-far':  return { opacity: 1, y: 0 }
+    case 'left':
+    case 'right':   return { opacity: 1, x: 0 }
+    case 'fade':    return { opacity: 1 }
+  }
+}
+
+export default function FadeIn({
+  children,
+  delay = 0,
+  className,
+  style,
+  onMount = false,
+  direction = 'up',
+}: FadeInProps) {
+  const initial = getInitial(direction)
+  const animate = getAnimate(direction)
+
   if (onMount) {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={initial}
+        animate={animate}
         transition={{ duration: 0.7, ease: 'easeOut', delay }}
         className={className}
         style={style}
@@ -28,8 +61,8 @@ export default function FadeIn({ children, delay = 0, className, style, onMount 
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={initial}
+      whileInView={animate}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, ease: 'easeOut', delay }}
       className={className}

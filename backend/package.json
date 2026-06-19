@@ -2,15 +2,18 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "prisma generate && prisma migrate deploy",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.1072.0",
     "@prisma/client": "^6.19.2",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",

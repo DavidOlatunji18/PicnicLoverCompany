@@ -1,6 +1,7 @@
 const express = require('express')
 const { PrismaClient } = require('@prisma/client')
 const authMiddleware = require('../middleware/auth')
+const { sendBookingEmails } = require('../utils/email')
 const router = express.Router()
 const prisma = new PrismaClient()
 
@@ -16,6 +17,9 @@ router.post('/', async (req, res) => {
     const booking = await prisma.booking.create({
       data: { name, email, phone, date, startTime, guests: parseInt(guests), theme, location, addons, message, hearAbout }
     })
+
+    sendBookingEmails(booking).catch(err => console.error('Email send failed:', err))
+
     res.status(201).json({ success: true, booking })
   } catch (err) {
     res.status(500).json({ error: 'Failed to create booking' })

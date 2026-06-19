@@ -6,6 +6,7 @@ import Lightbox from 'yet-another-react-lightbox'
 import Counter from 'yet-another-react-lightbox/plugins/counter'
 import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/counter.css'
+import FadeIn from '../components/FadeIn'
 
 const photos = [
   '/gallery/DSC00304.jpeg',
@@ -46,23 +47,25 @@ export default function Gallery() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}
-        <h1 style={{
-          color: '#E8547A',
-          fontFamily: 'var(--font-playfair)',
-          fontSize: '3rem',
-          marginBottom: '0.5rem',
-        }} className="text-center">
-          Gallery
-        </h1>
+        <FadeIn onMount direction="left" delay={0.3}>
+          <h1 style={{
+            color: '#E8547A',
+            fontFamily: 'var(--font-playfair)',
+            fontSize: '3rem',
+            marginBottom: '0.5rem',
+          }} className="text-center">
+            Gallery
+          </h1>
 
-        <p style={{
-          color: '#B5637A',
-          fontFamily: 'var(--font-cormorant)',
-          fontSize: '1.1rem',
-          marginBottom: '3rem',
-        }} className="text-center">
-          Every setup tells a story — take a look at the moments we've had the pleasure of creating.
-        </p>
+          <p style={{
+            color: '#B5637A',
+            fontFamily: 'var(--font-cormorant)',
+            fontSize: '1.1rem',
+            marginBottom: '3rem',
+          }} className="text-center">
+            Every setup tells a story — take a look at the moments we've had the pleasure of creating.
+          </p>
+        </FadeIn>
 
         {/* Masonry Grid */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">

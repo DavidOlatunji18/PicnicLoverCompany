@@ -1,9 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaInstagram, FaTiktok, FaFacebookF, FaPhone } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
+  const pathname = usePathname()
+  if (pathname.startsWith('/dashboard')) return null
   return (
     <footer style={{ backgroundColor: '#FAF7F4', borderTop: '0.5px solid #F2A0B4' }} className="w-full px-8 py-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">

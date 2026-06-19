@@ -78,7 +78,7 @@ export default function Packages() {
       <div className="max-w-5xl mx-auto px-6">
 
         {/* Page Header */}
-        <FadeIn>
+        <FadeIn onMount direction="left" delay={0.3}>
           <h1 style={{
             color: '#E8547A',
             fontFamily: 'var(--font-playfair)',
@@ -99,7 +99,7 @@ export default function Packages() {
 
         {/* What's Included */}
         <section style={{ marginBottom: '4rem' }}>
-          <FadeIn>
+          <FadeIn direction="right">
             <h2 style={sectionHeadingStyle} className="text-center">What's Included</h2>
             <div style={dividerStyle} />
           </FadeIn>
@@ -121,7 +121,7 @@ export default function Packages() {
 
         {/* Pricing */}
         <section id="pricing" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <FadeIn>
+          <FadeIn direction="left">
             <h2 style={sectionHeadingStyle} className="text-center">Pricing</h2>
             <div style={dividerStyle} />
             <p style={{
@@ -170,7 +170,7 @@ export default function Packages() {
 
         {/* Add-ons */}
         <section id="addons" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <FadeIn>
+          <FadeIn direction="right">
             <h2 style={sectionHeadingStyle} className="text-center">Add-Ons</h2>
             <div style={dividerStyle} />
           </FadeIn>
@@ -218,7 +218,7 @@ export default function Packages() {
 
         {/* Deposit Policy */}
         <section id="deposit" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <FadeIn>
+          <FadeIn direction="left">
             <h2 style={sectionHeadingStyle} className="text-center">Deposit Policy</h2>
             <div style={dividerStyle} />
           </FadeIn>
@@ -252,7 +252,7 @@ export default function Packages() {
 
         {/* Preferred Locations */}
         <section id="locations" style={{ marginBottom: '4rem', scrollMarginTop: '120px' }}>
-          <FadeIn>
+          <FadeIn direction="right">
             <h2 style={sectionHeadingStyle} className="text-center">Preferred Locations</h2>
             <div style={dividerStyle} />
             <p style={{
@@ -310,7 +310,7 @@ export default function Packages() {
 
         {/* Themes */}
         <section id="themes" style={{ scrollMarginTop: '120px' }}>
-          <FadeIn>
+          <FadeIn direction="left">
             <h2 style={sectionHeadingStyle} className="text-center">Themes</h2>
             <div style={dividerStyle} />
           </FadeIn>
@@ -348,7 +348,7 @@ export default function Packages() {
         </section>
 
         {/* CTA */}
-        <FadeIn delay={0.1}>
+        <FadeIn direction="up-far">
           <div className="text-center" style={{ marginTop: '4rem' }}>
             <a href="/book"
               style={{
