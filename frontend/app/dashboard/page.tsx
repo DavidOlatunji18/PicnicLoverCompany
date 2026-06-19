@@ -35,7 +35,7 @@ export default function Dashboard() {
 
   const fetchBookings = useCallback(async (token: string) => {
     try {
-      const res = await fetch('http://localhost:3001/api/bookings', {
+      const res = await fetch('${process.env.NEXT_PUBLIC_API_URL}/api/bookings', {
         headers: { Authorization: `Bearer ${token}` },
       })
       if (res.status === 401) {
@@ -61,7 +61,7 @@ export default function Dashboard() {
 
   async function updateStatus(id: number, status: string) {
     const token = localStorage.getItem('admin_token')
-    await fetch(`http://localhost:3001/api/bookings/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookings/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       body: JSON.stringify({ status }),

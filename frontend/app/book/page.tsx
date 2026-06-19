@@ -192,7 +192,7 @@ export default function Book() {
     setLoading(true)
     setError('')
     try {
-      const res = await fetch('http://localhost:3001/api/bookings', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
