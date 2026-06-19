@@ -31,3 +31,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
+input[type="date"]::-webkit-datetime-edit {
+  color: #2D1B1E;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  color: #2D1B1E;
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+  color: #2D1B1E;
+}
+
