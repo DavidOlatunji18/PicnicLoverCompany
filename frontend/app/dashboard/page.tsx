@@ -35,7 +35,7 @@ export default function Dashboard() {
 
   const fetchBookings = useCallback(async (token: string) => {
     try {
-      const res = await fetch('${process.env.NEXT_PUBLIC_API_URL}/api/bookings', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookings`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       if (res.status === 401) {
