@@ -314,20 +314,13 @@ export default function Book() {
               <h2 style={sectionHeading}>Event Details</h2>
               <div>
                 <label style={labelStyle}>Preferred Date *</label>
-                <div style={{ position: 'relative' }}>
-                  <input
-                    type="date"
-                    style={{ ...inputStyle, color: form.date ? '#2D1B1E' : 'transparent' }}
-                    value={form.date}
-                    onChange={e => update('date', e.target.value)}
-                    min={new Date().toISOString().split('T')[0]}
-                  />
-                  {!form.date && (
-                    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', paddingLeft: '1rem', pointerEvents: 'none', color: '#B5637A', fontFamily: 'var(--font-cormorant)', fontSize: '1rem' }}>
-                      Select a date
-                    </div>
-                  )}
-                </div>
+                <input
+                  type="date"
+                  style={{ ...inputStyle, boxSizing: 'border-box', maxWidth: '100%' }}
+                  value={form.date}
+                  onChange={e => update('date', e.target.value)}
+                  min={new Date().toISOString().split('T')[0]}
+                />
               </div>
               <div>
                 <label style={labelStyle}>Preferred Start Time *</label>
