@@ -36,8 +36,7 @@ input[type="date"] {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(63%) sepia(30%) saturate(500%) hue-rotate(295deg) brightness(105%);
-  cursor: pointer;
+  display: none;
 }
 
 
