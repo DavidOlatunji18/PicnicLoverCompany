@@ -316,7 +316,7 @@ export default function Book() {
                 <label style={labelStyle}>Preferred Date *</label>
                 <input
                   type="date"
-                  style={{ ...inputStyle, boxSizing: 'border-box', maxWidth: '100%' }}
+                  style={inputStyle}
                   value={form.date}
                   onChange={e => update('date', e.target.value)}
                   min={new Date().toISOString().split('T')[0]}

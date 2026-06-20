@@ -26,6 +26,15 @@ body {
 
 button, a { touch-action: manipulation; }
 
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(63%) sepia(30%) saturate(500%) hue-rotate(295deg) brightness(105%);
   cursor: pointer;
