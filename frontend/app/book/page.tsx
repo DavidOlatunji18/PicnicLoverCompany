@@ -317,17 +317,19 @@ export default function Book() {
                 <div style={{ position: 'relative' }}>
                   <input
                     type="date"
-                    style={{ ...inputStyle, color: form.date ? '#2D1B1E' : 'transparent' }}
+                    style={{ ...inputStyle, color: 'transparent' }}
                     value={form.date}
                     onChange={e => update('date', e.target.value)}
                     min={new Date().toISOString().split('T')[0]}
                   />
-                  {!form.date && (
-                    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '1rem', paddingRight: '1rem', pointerEvents: 'none' }}>
-                      <span style={{ color: '#B5637A', fontFamily: 'var(--font-cormorant)', fontSize: '1rem' }}>Select a date</span>
-                      <MdDateRange size={20} style={{ color: '#F2A0B4' }} />
-                    </div>
-                  )}
+                  <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '1rem', paddingRight: '1rem', pointerEvents: 'none' }}>
+                    <span style={{ color: form.date ? '#2D1B1E' : '#B5637A', fontFamily: 'var(--font-cormorant)', fontSize: '1rem' }}>
+                      {form.date
+                        ? new Date(form.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+                        : 'Select a date'}
+                    </span>
+                    <MdDateRange size={20} style={{ color: '#F2A0B4' }} />
+                  </div>
                 </div>
               </div>
               <div>
