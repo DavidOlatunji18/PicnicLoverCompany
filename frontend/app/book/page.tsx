@@ -253,7 +253,7 @@ export default function Book() {
             You're All Set!
           </h1>
           <p style={{ fontFamily: 'var(--font-cormorant)', color: '#B5637A', fontSize: '1.1rem', lineHeight: '1.7' }}>
-            Thank you for reaching out, {form.name}! We've received your booking request and will be in touch at <strong>{form.email}</strong> shortly.
+            Thank you for reaching out, <strong>{form.name}</strong>! We've received your booking request and will be in touch at <strong>{form.email}</strong> shortly.
           </p>
         </div>
       </main>
