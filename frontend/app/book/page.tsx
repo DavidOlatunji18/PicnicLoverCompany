@@ -188,6 +188,10 @@ export default function Book() {
     }))
   }
 
+  useEffect(() => {
+    if (submitted) window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [submitted])
+
   const handleSubmit = async () => {
     setLoading(true)
     setError('')
