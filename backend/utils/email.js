@@ -78,10 +78,11 @@ function row(label, value) {
 
 async function sendBookingEmails(booking) {
   const sender = process.env.SENDER_EMAIL
+  const ownerEmail = process.env.OWNER_EMAIL
 
   const ownerCommand = new SendEmailCommand({
     Source: sender,
-    Destination: { ToAddresses: [sender] },
+    Destination: { ToAddresses: [ownerEmail] },
     Message: {
       Subject: { Data: `New Booking Request — ${booking.name}` },
       Body: { Html: { Data: ownerEmailHtml(booking) } },
