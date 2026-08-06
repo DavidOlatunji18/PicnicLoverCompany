@@ -48,13 +48,8 @@ export default function About() {
 
           {/* Photo */}
           <FadeIn direction="left">
-            <div style={{ borderRadius: '16px', overflow: 'hidden', aspectRatio: '4/5', backgroundColor: '#F2A0B4', position: 'relative' }}>
-              {/* Replace with actual founder photo */}
-              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px' }}>
-                <p style={{ fontFamily: 'var(--font-cormorant)', color: 'white', fontSize: '1rem', textAlign: 'center', padding: '1rem' }}>
-                  [Owner photo goes here]
-                </p>
-              </div>
+            <div style={{ borderRadius: '16px', overflow: 'hidden', aspectRatio: '4/5', position: 'relative' }}>
+              <Image src="/gallery/owner_photo.jpg" alt="Vanessa Olatunji, Founder of Picnic Lover Co." fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
             </div>
           </FadeIn>
 
