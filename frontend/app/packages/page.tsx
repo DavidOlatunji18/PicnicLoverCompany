@@ -50,13 +50,13 @@ export default function Packages() {
   ]
 
   const themes = [
-    { name: 'PINK CHIC', tagline: 'for the girls\' girl' },
-    { name: 'GLOW', tagline: 'feeling zesty?' },
-    { name: 'CHARM', tagline: 'premium soft life' },
-    { name: 'ROMANTIC', tagline: 'relive the moments' },
-    { name: 'WAVES', tagline: 'ride the tide, chase the vibe' },
-    { name: 'NEUTRAL CHIC', tagline: 'your calmest dream' },
-    { name: 'GENDER REVEAL', tagline: 'for your bundle of joy' },
+    { name: 'PINK CHIC', tagline: 'for the girls\' girl', palette: ['#F4A0B4'] },
+    { name: 'GLOW', tagline: 'feeling zesty?', palette: ['#FCD34D'] },
+    { name: 'CHARM', tagline: 'premium soft life', palette: ['#C4A8D4'] },
+    { name: 'ROMANTIC', tagline: 'relive the moments', palette: ['#EF4444'] },
+    { name: 'WAVES', tagline: 'ride the tide, chase the vibe', palette: ['#38BDF8'] },
+    { name: 'NEUTRAL CHIC', tagline: 'your calmest dream', palette: ['#FCE4EC'] },
+    { name: 'GENDER REVEAL', tagline: 'for your bundle of joy', palette: ['#F9A8D4', '#93C5FD'] },
   ]
 
   const sectionHeadingStyle = {
@@ -315,32 +315,40 @@ export default function Packages() {
             <div style={dividerStyle} />
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {themes.map(({ name, tagline }, i) => (
+            {themes.map(({ name, tagline, palette }, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div style={{
                   border: '1px solid #F2A0B4',
                   borderRadius: '12px',
                   backgroundColor: '#fff',
-                  padding: '1.25rem 1.5rem',
+                  display: 'flex',
+                  overflow: 'hidden',
                 }}>
-                  <p style={{
-                    fontFamily: 'var(--font-playfair)',
-                    color: '#E8547A',
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    marginBottom: '0.25rem',
-                    letterSpacing: '0.05em',
-                  }}>
-                    {name}
-                  </p>
-                  <p style={{
-                    fontFamily: 'var(--font-cormorant)',
-                    color: '#B5637A',
-                    fontSize: '0.95rem',
-                    fontStyle: 'italic',
-                  }}>
-                    {tagline}
-                  </p>
+                  <div style={{ flex: 1, padding: '1.25rem 1.5rem' }}>
+                    <p style={{
+                      fontFamily: 'var(--font-playfair)',
+                      color: '#E8547A',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      marginBottom: '0.25rem',
+                      letterSpacing: '0.05em',
+                    }}>
+                      {name}
+                    </p>
+                    <p style={{
+                      fontFamily: 'var(--font-cormorant)',
+                      color: '#B5637A',
+                      fontSize: '0.95rem',
+                      fontStyle: 'italic',
+                    }}>
+                      {tagline}
+                    </p>
+                  </div>
+                  <div style={{ width: '72px', display: 'flex', flexShrink: 0 }}>
+                    {palette.map((color, idx) => (
+                      <div key={idx} style={{ flex: 1, backgroundColor: color }} />
+                    ))}
+                  </div>
                 </div>
               </FadeIn>
             ))}
