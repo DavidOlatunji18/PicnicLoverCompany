@@ -80,9 +80,9 @@ export default function About() {
             </h2>
           </FadeIn>
           <FadeIn direction="up" delay={0.15}>
-            <p style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '1.1rem', lineHeight: '1.9', marginBottom: '1.25rem' }}>
+            {/* <p style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '1.1rem', lineHeight: '1.9', marginBottom: '1.25rem' }}>
               [Placeholder: Share the origin story here — what inspired you to start Picnic Lover Co., what was happening in your life at the time, and what moment made you realize this was something worth pursuing.]
-            </p>
+            </p> */}
             <p style={{ fontFamily: 'var(--font-cormorant)', color: '#2D1B1E', fontSize: '1.1rem', lineHeight: '1.9', marginBottom: '1.25rem' }}>
               What began as intimate setups for close friends and family quickly grew into something bigger. Word spread, bookings came in, and Picnic Lover Co. was born — rooted in the DMV area and fueled by a genuine love for people and meaningful experiences.
             </p>
