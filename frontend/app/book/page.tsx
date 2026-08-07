@@ -10,12 +10,14 @@ function CustomSelect({
   onChange,
   placeholder,
   icon,
+  optionColors,
 }: {
   options: string[]
   value: string
   onChange: (val: string) => void
   placeholder: string
   icon?: React.ReactNode
+  optionColors?: Record<string, string[]>
 }) {
   const [open, setOpen] = useState(false)
   const [hovered, setHovered] = useState('')
@@ -88,8 +90,19 @@ function CustomSelect({
                   cursor: 'pointer',
                   borderRadius: '6px',
                   transition: 'background-color 0.15s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '0.5rem',
                 }}>
-                {opt}
+                <span>{opt}</span>
+                {optionColors?.[opt] && (
+                  <div style={{ display: 'flex', flexShrink: 0, borderRadius: '4px', overflow: 'hidden', width: '32px', height: '18px' }}>
+                    {optionColors[opt].map((color, idx) => (
+                      <div key={idx} style={{ flex: 1, backgroundColor: color }} />
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -114,6 +127,16 @@ const timeSlots = (() => {
 })()
 
 const themes = ['PINK CHIC', 'GLOW', 'CHARM', 'ROMANTIC', 'WAVES', 'NEUTRAL CHIC', 'GENDER REVEAL']
+
+const themeColors: Record<string, string[]> = {
+  'PINK CHIC': ['#F4A0B4'],
+  'GLOW': ['#FCD34D'],
+  'CHARM': ['#C4A8D4'],
+  'ROMANTIC': ['#EF4444'],
+  'WAVES': ['#38BDF8'],
+  'NEUTRAL CHIC': ['#FCE4EC'],
+  'GENDER REVEAL': ['#F9A8D4', '#93C5FD'],
+}
 const locations = [
   'East Potomac Park (Washington, DC)',
   'Gravelly Point Park (Arlington, VA)',
@@ -367,6 +390,7 @@ export default function Book() {
                   value={form.theme}
                   onChange={val => update('theme', val)}
                   placeholder="Select a theme"
+                  optionColors={themeColors}
                 />
               </div>
               <div>
