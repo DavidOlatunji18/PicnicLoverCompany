@@ -20,7 +20,7 @@ const values = [
 ]
 
 const testimonial = {
-  quote: 'I cannot say enough great things about Picnic Lover Co. Every single detail was perfect — the setup was beautiful, the team was professional, and I didn\'t have to worry about a thing. It was the most magical afternoon.',
+  quote: 'I cannot say enough great things about Vanessa. Every single detail was perfect — the setup was beautiful, she was super professional, and I didn\'t have to worry about a thing. It was the most magical afternoon.',
   name: 'Tiffany R.',
 }
 
