@@ -1,4 +1,4 @@
-# Picnic Lover Co.
+# Picnic Lover Company
 
 A full-stack business website built for [Picnic Lover Co.](https://picnicloverco.com) — a luxury picnic experience company based in the DMV area. The site replaces a manual Instagram DM / text message booking process with a structured, automated system complete with a multi-step booking form, transactional emails, and a protected admin dashboard.
 
